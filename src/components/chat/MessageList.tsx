@@ -1,5 +1,6 @@
 "use client";
 
+import { siteConfig } from "@/lib/site-config";
 import type { Message } from "./types";
 
 interface MessageListProps {
@@ -10,13 +11,19 @@ interface MessageListProps {
 export function MessageList({ messages, isLoading }: MessageListProps) {
   if (messages.length === 0 && !isLoading) {
     return (
-      <div className="flex flex-1 flex-col items-center justify-center px-4 text-center">
-        <p className="text-lg font-medium text-zinc-700 dark:text-zinc-300">
-          Ask me anything about my professional background
+      <div className="flex flex-1 flex-col items-center justify-center px-6 py-8 text-center">
+        <div
+          className="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-zinc-900 text-lg font-semibold text-white dark:bg-zinc-100 dark:text-zinc-900"
+          aria-hidden
+        >
+          {siteConfig.initials}
+        </div>
+        <p className="text-xl font-semibold text-zinc-900 dark:text-zinc-100">
+          Hi, I&apos;m {siteConfig.firstName}
         </p>
-        <p className="mt-2 max-w-md text-sm text-zinc-500 dark:text-zinc-400">
-          I can tell you about my experience, skills, projects, and career — all
-          grounded in my resume and knowledge base.
+        <p className="mt-2 max-w-md text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">
+          {siteConfig.tagline} Ask me about my experience at {siteConfig.company},
+          RAG/LLM work, or full-stack projects.
         </p>
       </div>
     );

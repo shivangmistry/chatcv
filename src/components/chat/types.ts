@@ -5,8 +5,8 @@ export interface Message {
 }
 
 export const SUGGESTED_QUESTIONS = [
-  "What's your experience with RAG systems?",
-  "Tell me about a notable project you've worked on.",
-  "What technologies do you work with?",
-  "What's your current role?",
+  "What's your experience with RAG systems at Stackline?",
+  "Tell me about ShopperOS and your role.",
+  "What AI/LLM features have you shipped?",
+  "What's your full-stack tech stack?",
 ];

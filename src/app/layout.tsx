@@ -1,5 +1,7 @@
+import { siteConfig } from "@/lib/site-config";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,9 +15,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ChatCV — Professional Background Chat",
-  description:
-    "Chat with an AI assistant about my professional experience, skills, and projects.",
+  title: `${siteConfig.name} — ChatCV`,
+  description: siteConfig.tagline,
+  openGraph: {
+    title: `${siteConfig.name} — ChatCV`,
+    description: siteConfig.tagline,
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -26,10 +32,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
-        {children}
+      <body className="min-h-full flex flex-col bg-zinc-50 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );
