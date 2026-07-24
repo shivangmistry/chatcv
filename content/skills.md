@@ -2,24 +2,25 @@
 
 ## Languages
 
-TypeScript, JavaScript, Python, Go, SQL
+JavaScript (ES6+), TypeScript, SQL, NoSQL
 
 ## Frontend
 
-React, Next.js, Tailwind CSS, HTML/CSS
+React, Next.js, Redux, TanStack Query, React Native, Tailwind CSS,
+shadcn/ui, Material UI, Highcharts
 
 ## Backend
 
-Node.js, FastAPI, REST APIs, GraphQL, WebSockets
+Node.js, Express, GraphQL APIs, REST API Design, Microservices, WebSockets
 
-## AI / ML
+## AI / LLM
 
-LLM integration, RAG systems, prompt engineering, embeddings (for future use), Groq/OpenAI APIs
+RAG pipelines, LLM integrations (OpenAI/ChatGPT, Claude), prompt engineering
 
-## Infrastructure
+## Testing
 
-AWS (Lambda, ECS, S3, RDS), Docker, Kubernetes, Vercel, GitHub Actions
+Cypress, Jest, A/B Testing, Accessibility (a11y), SEO
 
-## Practices
+## Cloud / DevOps
 
-System design, technical writing, code review, agile development, observability (logging, metrics)
+AWS (DynamoDB, S3, CloudFront, ECS, IAM), Elasticsearch, CI/CD, Git
