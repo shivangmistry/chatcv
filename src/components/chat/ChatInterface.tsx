@@ -113,7 +113,7 @@ export function ChatInterface() {
   );
 
   return (
-    <div className="flex h-full flex-col">
+    <div className="flex h-full flex-col bg-background text-foreground transition-colors">
       <MessageList messages={messages} isLoading={isLoading} />
 
       {messages.length === 0 && (

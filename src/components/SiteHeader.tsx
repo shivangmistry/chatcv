@@ -1,4 +1,5 @@
 import { siteConfig } from "@/lib/site-config";
+import { ResumeDownloadButton } from "./ResumeDownloadButton";
 import { ThemeToggle } from "./ThemeToggle";
 
 function ExternalLink({
@@ -25,7 +26,7 @@ function ExternalLink({
 
 export function SiteHeader() {
   return (
-    <header className="border-b border-zinc-200 bg-white/80 backdrop-blur-sm dark:border-zinc-800 dark:bg-zinc-950/80">
+    <header className="border-b border-zinc-200 bg-background/80 backdrop-blur-sm dark:border-zinc-800">
       <div className="mx-auto flex max-w-3xl flex-col gap-4 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
         <div className="flex items-center gap-3">
           <div
@@ -35,7 +36,7 @@ export function SiteHeader() {
             {siteConfig.initials}
           </div>
           <div>
-            <h1 className="text-lg font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
+            <h1 className="text-lg font-semibold tracking-tight text-foreground">
               {siteConfig.name}
             </h1>
             <p className="text-sm text-zinc-500 dark:text-zinc-400">
@@ -61,27 +62,7 @@ export function SiteHeader() {
             </svg>
           </ExternalLink>
 
-          <a
-            href="/api/resume/pdf"
-            download={siteConfig.resumePdfFilename}
-            className="inline-flex h-9 items-center gap-2 rounded-lg border border-zinc-200 bg-zinc-50 px-3 text-sm font-medium text-zinc-700 transition-colors hover:border-zinc-300 hover:bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:border-zinc-600 dark:hover:bg-zinc-800"
-          >
-            <svg
-              className="h-4 w-4"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-              aria-hidden
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-              />
-            </svg>
-            Resume
-          </a>
+          <ResumeDownloadButton />
 
           <ThemeToggle />
         </div>
